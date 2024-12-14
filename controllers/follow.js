@@ -156,10 +156,10 @@ export const following = async (req, res) => {
   try {
     // Obtener el ID del usuario identificado
     let userId = req.user && req.user.userId ? req.user.userId : undefined;
-    console.log(userId);
+    //console.log(userId);
     // Comprobar si llega el ID por parámetro en la url (este tiene prioridad)
     if (req.params.id) userId = req.params.id;
-    console.log(userId);
+    //console.log(userId);
     // Asignar el número de página
     let page = req.params.page ? parseInt(req.params.page, 10) : 1;
 
