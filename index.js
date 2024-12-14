@@ -7,7 +7,7 @@ import UserRoutes from './routes/users.js'
 import PublicationRoutes from './routes/publications.js'
 import FollowRoutes from './routes/follows.js'
 
-// Mensaje de Bienvenida para verificare ejecutó la API de Node
+// Mensaje de Bienvenida para verificar ejecucion API de Node
 console.log("API Node en ejecución")
 
 // Usar la conexión a la Base de Datos
