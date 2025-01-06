@@ -27,6 +27,7 @@ export const register = async (req, res) => {
         //Crear el objeto del usuario con los datos que validamos
         let user_to_save = new User(params)
         //Control de usuarios duplicados
+        console.log("verificando si ya se registro usuario con nick o mail facilitados ");
         const existingUser = await User.findOne({
           $or: [
             {nick: user_to_save.nick},
@@ -49,10 +50,12 @@ export const register = async (req, res) => {
         //guardar ya cifrado
         user_to_save.password = hashedPassword
         //Guardar el usuario en la BD
+        console.log("antes de salvar usuario nuevo")
         await user_to_save.save()
         //Devolver el usuario registrado
+        console.log("enviando respuesta 201 clsusuario creado")
         return res.status(201).json({
-          status: 'Created',
+          status: 'created',
           message: "Registro de usuario exitoso",
           user_to_save
         })
