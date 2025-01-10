@@ -104,7 +104,7 @@ export const login = async (req, res) => {
     
     //Devolver resouesta de login exitoso
     return res.status(200).json({
-      status: 'Success',
+      status: 'success',
       message: "Autenticacion exitosa",
       token,
       userBd: {
@@ -143,7 +143,7 @@ export const profile = async (req, res) => {
   //verificar si el usuario buscado eno existe
   if(!userProfile){
     res.status(404).send({
-      status: "succes",
+      status: "error",
       message: "Error al obtener el perfil de usuario"
     })
   }
